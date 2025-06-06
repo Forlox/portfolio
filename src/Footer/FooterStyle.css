@@ -1,0 +1,15 @@
+.footer-container {
+    background-color: var(--blue);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+.footer-links {
+    margin-top: 0.5rem;
+}
+
+    .footer-links a {
+        color: white;
+        margin: 0 0.5rem;
+    }

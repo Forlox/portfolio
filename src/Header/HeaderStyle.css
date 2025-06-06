@@ -1,0 +1,22 @@
+.nav 
+{
+    background-color: var(--blue);
+    color: white;
+    padding: 1rem; 
+}
+
+.nav ul 
+{
+    display: flex;
+    gap: 1rem;
+}
+
+.nav li a 
+{
+    color: white;
+}
+
+.nav li a:hover 
+{
+    text-decoration: underline; 
+}
