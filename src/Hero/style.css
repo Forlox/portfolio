@@ -1,0 +1,49 @@
+.hero-container {
+    background-color: #164ca5; /* Тёмно-синий цвет */
+    border: 2px solid #9e9e9e; /* Серая обводка */
+    border-radius: 15px; /* Скруглённые углы */
+    margin: 2rem auto; /* Отступы вокруг контейнера */
+    overflow: hidden; /* Чтобы скругления работали правильно */
+    margin: 2rem;
+}
+
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 8%;
+    gap: 4rem;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 600px;
+}
+
+.hero-heading {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.2;
+    color: #ffffff;
+}
+
+.hero-text {
+    font-size: 2rem;
+    color: #e0e0e0; /* Светло-серый для текста */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+}

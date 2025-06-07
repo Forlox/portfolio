@@ -12,6 +12,7 @@
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "react": "^19.1.0",
+    "react-animate-on-scroll": "^2.1.9",
     "react-dom": "^19.1.0",
     "react-scripts": "5.0.1",
     "styled-components": "^6.1.18",
@@ -41,5 +42,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/react-animate-on-scroll": "^2.1.8"
   }
 }
