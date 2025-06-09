@@ -12,6 +12,8 @@ export function Main(): JSX.Element {
             <AboutMe/>
             <MyProjects/>
             <Contact/>
+            <Hero/>
+            <Hero/>
         </>
     );
 }
