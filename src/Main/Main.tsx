@@ -13,7 +13,6 @@ export function Main(): JSX.Element {
             <MyProjects/>
             <Contact/>
             <Hero/>
-            <Hero/>
         </>
     );
 }
