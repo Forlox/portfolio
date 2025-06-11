@@ -1,15 +1,36 @@
-.footer-container {
-    background-color: var(--blue);
-    color: white;
-    padding: 1rem;
-    text-align: center;
+.footer {
+    background-color: #2b2b2b;
+    padding: 1rem 5rem;
+    margin-top: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.footer-links {
-    margin-top: 0.5rem;
+.footer .site {
+    font-size: 2rem;
 }
 
-    .footer-links a {
-        color: white;
-        margin: 0 0.5rem;
-    }
+.footer p {
+    letter-spacing: 0.1rem;
+    display: flex;
+    align-items: center;
+}
+
+.footer p img {
+    width: 5rem;
+    height: 5rem;
+    animation: spinning 5s infinite linear;
+}
+
+.footer .social-media {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+@keyframes spinning {
+    0% {transform: rotate(0);}
+    100% {transform: rotate(360deg);}
+}

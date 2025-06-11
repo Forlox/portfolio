@@ -1,26 +1,20 @@
-import React, { JSX } from 'react';
+import React from 'react';
 import './FooterStyle.css';
+import reactIcon from '../Assets/logo.svg';
 
-export function Footer(): JSX.Element {
+export function Footer() {
     return (
-        <footer className="footer-container">
-            <p>Made with nothing</p>
-            <div className="footer-links">
-                <a // гиперссылки
-                    href="https://www.linkedin.com/in/codevinayak"
-                    target="_blank" // открываться в новой вкладке браузера
-                    rel="noreferrer" // неочевидная какая-то "полезная" штука
-                >
-                    LinkedIn
-                </a>
-                |
-                <a
-                    href="https://github.com/CodeVinayak/"
-                    target="_blank"
-                    rel="noreferrer"
-                >
-                    GitHub
-                </a>
+        <footer className="footer">
+            <div className="site">
+                <span>localhost:3000</span>
+            </div>
+            <div>
+                <p>
+                    РЎР°Р№С‚ СЃРґРµР»Р°РЅ СЃ РїРѕРјРѕС‰СЊСЋ<img src={reactIcon} alt="React" />
+                </p>
+            </div>
+            <div className="social-media">
+                <span>РЎСЃС‹Р»РєРё РЅР° СЃРѕС†СЃРµС‚Рё</span>
             </div>
         </footer>
     );

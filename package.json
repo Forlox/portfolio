@@ -45,6 +45,9 @@
     ]
   },
   "devDependencies": {
-    "@types/react-animate-on-scroll": "^2.1.8"
+    "@types/react-animate-on-scroll": "^2.1.8",
+    "@types/react-router-hash-link": "^2.4.9",
+    "react-router-dom": "^7.6.2",
+    "react-router-hash-link": "^2.4.3"
   }
 }

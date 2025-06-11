@@ -26,23 +26,6 @@ export function Contact(): JSX.Element {
                             <span>github.com/portfolio</span>
                         </div>
                     </div>
-                    <div className="contact-form">
-                        <form id="contactForm">
-                            <div className="form-group">
-                                <label htmlFor="name">Имя</label>
-                                <input type="text" id="name" required/>
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="email">Email</label>
-                                <input type="email" id="email" required/>
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="message">Сообщение</label>
-                                <textarea id="message" required></textarea>
-                            </div>
-                            <button type="submit" className="submit-btn">Отправить сообщение</button>
-                        </form>
-                    </div>
                 </div>
             </section>
         </>

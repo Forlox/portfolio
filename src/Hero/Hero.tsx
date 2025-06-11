@@ -6,24 +6,24 @@ import './style.css';
 
 export function Hero(): JSX.Element {
     return (
-        <ScrollAnimation animateIn="fadeIn" delay={1 * 100}>
+        //<ScrollAnimation animateIn="fadeIn" delay={100} offset={0}>
             <div className="hero-container">
-                <section id="home" className="hero-section">
+                <section id="home" className="hero" >
                     <div className="hero-content">
-                        <ScrollAnimation animateIn="fadeInUp" delay={2 * 100}>
+                        {/*<ScrollAnimation animateIn="fadeInUp" delay={2 * 100}>*/}
                             <h1 className="hero-heading">Привет, я Иван Иванов</h1>
-                        </ScrollAnimation>
-                        <ScrollAnimation animateIn="fadeInUp" delay={3 * 100}>
+                        {/*</ScrollAnimation>*/}
+                        {/*<ScrollAnimation animateIn="fadeInUp" delay={3 * 100}>*/}
                             <p className="hero-text">
                                 Frontend разработчик с фокусом на создании чистых, функциональных и эстетичных пользовательских интерфейсов
                             </p>
-                        </ScrollAnimation>
+                        {/*</ScrollAnimation>*/}
                     </div>
                     <div className="hero-image">
                         <img src={logo} alt="Логотип" />
                     </div>
                 </section>
             </div>
-        </ScrollAnimation>
+        //</ScrollAnimation>
     );
 }
