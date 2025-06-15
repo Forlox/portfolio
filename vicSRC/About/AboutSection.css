@@ -1,0 +1,33 @@
+﻿.about-section 
+{
+    background-color: #ffffff; /* Белый фон секции */
+}
+
+/* выравнивание содержимого секции */
+.content 
+{
+    display: flex; /* Flexbox для расположения элементов в строку */
+    align-items: center; /* выравнивание элементов по вертикали по центру */
+    gap: 3rem; /* расстояние между элементами (3 rem) */
+    margin: 0 auto; /* горизонтальное центрирование контейнера */
+}
+
+.profile-img 
+{
+    width: 250px; /* ширина 250*/
+    height: 250px; /* высота 250*/
+    border-radius: 50%; /* круг типо */
+    background-color: #000000; /* черный фон*/
+    display: flex; /* Flexbox для внутреннего выравнивания содержимого */
+    align-items: center; /* центрирование содержимого по вертикали */
+    justify-content: center; /* Центрирование содержимого по горизонтали */
+    color: #ffffff; /* белый цвет текста*/
+    font-size: 1.5rem; /* размер шрифта */
+    font-weight: bold; /* жирн */
+}
+
+.about-text p 
+{
+    margin-bottom: 1.5rem; /* oтступ снизу после каждого абзаца */
+    font-size: 1.1rem; /* размер шрифта */
+}
