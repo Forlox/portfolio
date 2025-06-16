@@ -1,17 +1,50 @@
-import React, { JSX } from 'react';
-import { Footer } from './Footer/Footer';
-import { Header } from './Header/Header';
-import { Main } from './Main/Main';
-import { GlobalStyle } from './global'
+import React from 'react';
+import Header from './Header/Header';
+import HomeSection from './Home/HomeSection';
+import AboutSection from './About/AboutSection';
+import ProjectsSection from './Project/ProjectsSection';
+import ContactSection from './Contact/ContactSection';
+import {Footer} from '../src/fedSRC/Footer/Footer';
+import './App.css';
 
-function App(): JSX.Element {
+import {Hero} from "./fedSRC/Hero/Hero";
+
+function App() {
+    // ������� ��� ��������� � �����
+    function scrollToSection(sectionId: string) {
+        const sectionElement = document.getElementById(sectionId);
+        if (sectionElement) {
+            sectionElement.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
     return (
-        <>
-            <GlobalStyle />
-            <Header />
-            <Main />
+        <div className="app">
+            
+            <Header scrollToSection={scrollToSection} activeSection={''} />
+
+            <main>
+                {/*<section id="home">*/}
+                {/*    <HomeSection id={''} />*/}
+                {/*</section>*/}
+
+                <Hero/>
+
+                <section id="about">
+                    <AboutSection id={''} />
+                </section>
+
+                <section id="projects">
+                    <ProjectsSection id={''} />
+                </section>
+
+                <section id="contact">
+                    <ContactSection id={''} />
+                </section>
+            </main>
+
             <Footer />
-        </>
+        </div>
     );
 }
 
