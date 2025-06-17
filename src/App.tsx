@@ -1,16 +1,14 @@
-import React from 'react';
-import Header from './Header/Header';
-import HomeSection from './Home/HomeSection';
-import AboutSection from './About/AboutSection';
-import ProjectsSection from './Project/ProjectsSection';
-import ContactSection from './Contact/ContactSection';
-import {Footer} from '../src/fedSRC/Footer/Footer';
+﻿import React from 'react';
 import './App.css';
-
-import {Hero} from "./fedSRC/Hero/Hero";
+import { Header } from './Header/Header';
+import { AboutSection } from './About/AboutSection';
+import { ContactSection } from './Contact/ContactSection';
+import { Footer } from './Footer/Footer';
+import { HomeSection } from './Home/HomeSection';
+import { ProjectsSection } from './Project/ProjectsSection';
 
 function App() {
-    // ������� ��� ��������� � �����
+    // функция для прокрутки к блоку
     function scrollToSection(sectionId: string) {
         const sectionElement = document.getElementById(sectionId);
         if (sectionElement) {
@@ -24,22 +22,20 @@ function App() {
             <Header scrollToSection={scrollToSection} activeSection={''} />
 
             <main>
-                {/*<section id="home">*/}
-                {/*    <HomeSection id={''} />*/}
-                {/*</section>*/}
-
-                <Hero/>
+                <section id="home">
+                    <HomeSection  />
+                </section>
 
                 <section id="about">
-                    <AboutSection id={''} />
+                    <AboutSection />
                 </section>
 
                 <section id="projects">
-                    <ProjectsSection id={''} />
+                    <ProjectsSection />
                 </section>
 
                 <section id="contact">
-                    <ContactSection id={''} />
+                    <ContactSection />
                 </section>
             </main>
 

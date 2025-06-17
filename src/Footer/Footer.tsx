@@ -1,12 +1,21 @@
 ﻿import React from 'react';
 import './Footer.css';
+import reactIcon from '../Assets/logo.svg';
 
-const Footer = () => {
+export function Footer() {
     return (
-        <footer>
-            <p>Портфолио.</p>
+        <footer className="footer">
+            <div className="site">
+                <span>localhost:3000</span>
+            </div>
+            <div>
+                <p>
+                    Сайт сделан с помощью<img src={reactIcon} alt="React" />
+                </p>
+            </div>
+            <div className="social-media">
+                <span>Ссылки на соцсети</span>
+            </div>
         </footer>
     );
-};
-
-export default Footer;
+}
