@@ -1,0 +1,60 @@
+﻿.projects-section {
+    background-color: #f0f0f0; /*фон для раздела проектов*/
+}
+
+/*cетка проектов*/
+.projects-grid {
+    display: grid; /*для размещения дочерних элементов в виде сетки*/
+    /* 
+       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+       Команда repeat(auto-fill, minmax(300px, 1fr)) означает:
+         - Создавай столько столбцов, сколько поместится (auto-fill),
+         - Каждый столбец будет иметь минимальную ширину 300px,
+         - Если места больше, столбцы равномерно распределяются (1fr означает "одна доля доступного пространства").
+    */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2.5rem; /*рзамер между карточками*/
+    margin-top: 2rem; /*отступ сверху*/
+}
+
+.project-card {
+    background: #ffffff; /*белый фон*/
+    border: 1px solid #e0e0e0; /* тонкая рамка светлого цвета вокруг карточки */
+    border-radius: 5px; /*скругленные углы*/
+    /* 
+       transition задаёт плавное изменение свойств:
+         transform 0.3s ease — плавное изменение положения (например, перемещение вверх при наведении) за 0.3 сек.
+         box-shadow 0.3s ease — плавное появление тени за 0.3 сек.
+    */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+/*применимый стиль, когда указатель мыши на карточке*/
+    .project-card:hover {
+        transform: translateY(-10px); /*карточка сдвигается вверх на 10 пикселей*/
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /*тень вокруг*/
+    }
+
+.project-img 
+{
+    height: 200px; /* высота блока */
+    background-color: #000000; /* черный цвет фона */
+    display: flex; /* flexbox для центрирования содержимого внутри */
+    align-items: center; /* верт. центрирование содержимого*/
+    justify-content: center; /* гор. центрирование содержимого (по оX) */
+    color: #ffffff; /* цвет текста белый */
+    font-weight: bold; /* жирн */
+}
+
+.project-info {
+    padding: 1.5rem; /*внутр. отступ со всех сторон*/
+}
+
+    .project-info h3 {
+        font-size: 1.4rem;/*рахмер шрифта*/
+        margin-bottom: 0.8rem; /*jтступ снизу*/
+    }
+
+    .project-info p {
+        margin-bottom: 1.2rem;
+        color: #555555;
+    }
