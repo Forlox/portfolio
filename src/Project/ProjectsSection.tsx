@@ -1,62 +1,52 @@
-﻿import React, { useEffect } from 'react';
-import ScrollAnimation from 'react-animate-on-scroll';
-import "animate.css/animate.compat.css";
-import './ProjectsSection.css';
-import projectImg1 from '../Assets/cat.png';
-import projectImg2 from '../Assets/cat.png';
-import projectImg3 from '../Assets/cat.png';
+﻿import React from 'react';
 
-export function ProjectsSection() {
+// Секция проектов
+export function Projects() {
     const projects = [
         {
-            id: 1,
             title: 'Проект 1',
-            description: 'Описание проекта 1',
-            image: projectImg1
+            description: 'Информация о проекте',
+            tech: ['React', 'Node.js'],
+            icon: 'fas fa-chart-line',
         },
         {
-            id: 2,
             title: 'Проект 2',
-            description: 'Описание проекта 2',
-            image: projectImg2
+            description: 'Информация о проекте',
+            tech: ['React', 'Node.js'],
+            icon: 'fas fa-shopping-cart',
         },
         {
-            id: 3,
             title: 'Проект 3',
-            description: 'Описание проекта 3',
-            image: projectImg3
-        }
+            description: 'Информация о проекте',
+            tech: ['React', 'Node.js'],
+            icon: 'fas fa-mobile-alt',
+        },
     ];
 
     return (
-        <ScrollAnimation animateIn="fadeIn">
-        <section className="projects-section">
-            <ScrollAnimation animateIn="fadeInDown" duration={0.8} delay={100} animateOnce={true}>
-                <h2>Мои проекты</h2>
-            </ScrollAnimation>
-
+        <section id="projects" className="section">
+            <h2 className="section-title">Проекты</h2>
             <div className="projects-grid">
-                {projects.map(project => (
-                    <ScrollAnimation
-                        key={project.id}
-                        animateIn="fadeInUp"
-                        duration={0.6}
-                        delay={200}
-                        animateOnce={true}
-                    >
-                        <div className="project-card">
-                            <div className="project-img">
-                                <img src={project.image} alt={project.title} />
-                            </div>
-                            <div className="project-info">
-                                <h3>{project.title}</h3>
-                                <p>{project.description}</p>
-                            </div>
+                {projects.map((project, index) => (
+                    <div key={index} className="project-card">
+                        <div className="project-img">
+                            <i className={`${project.icon} text-3xl text-blue-500`}></i>
                         </div>
-                    </ScrollAnimation>
+                        <div className="project-info">
+                            <h3 className="project-title">{project.title}</h3>
+                            <p className="project-description">{project.description}</p>
+                            <div className="project-tech">
+                                {project.tech.map((tech, i) => (
+                                    <span key={i} className="tech-tag">{tech}</span>
+                                ))}
+                            </div>
+                            <a href="#" className="project-link">
+                                Подробнее <i className="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
                 ))}
             </div>
         </section>
-        </ScrollAnimation>
     );
 }

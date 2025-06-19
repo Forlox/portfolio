@@ -1,42 +1,21 @@
-﻿import React, { JSX } from 'react';
-import { motion } from 'framer-motion';
-import logo from '../Assets/catGIF.gif';
-import './HomeSection.css';
+﻿import React from 'react';
 
-export function HomeSection(): JSX.Element {
+// Главная секция
+export function Home() {
     return (
-        <div className="hero-container">
-            <motion.section id="home" className="hero" transition={{ duration: 1 }}>
-                <div className="hero-content">
-                    <motion.h1
-                        className="hero-heading"
-                        initial={{ y: 20, opacity: 0 }}
-                        whileInView={{ y: 0, opacity: 1 }}
-                        transition={{ duration: 0.5, delay: 0.2 }}
-                        viewport={{ once: true }}
-                    >
-                        Привет, я Иван Иванов
-                    </motion.h1>
-                    <motion.p
-                        className="hero-text"
-                        initial={{ y: 20, opacity: 0 }}
-                        whileInView={{ y: 0, opacity: 1 }}
-                        transition={{ duration: 0.5, delay: 0.3 }}
-                        viewport={{ once: true }}
-                    >
-                        Frontend разработчик с фокусом на создании чистых, функциональных и эстетичных пользовательских интерфейсов
-                    </motion.p>
-                </div>
-                <motion.div
-                    className="hero-image"
-                    initial={{ x: 20, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.4 }}
-                    viewport={{ once: true }}
-                >
-                    <img src={logo} alt="Логотип" />
-                </motion.div>
-            </motion.section>
-        </div>
+        
+        <section id="home" className="hero">
+            {/* 1-й уровень */}
+            <h1 className="hero-title">
+                Привет, я [???] профессиональный разработчик
+            </h1>
+            {/* отделяем текст */}
+            <p className="hero-text">
+                Создаю современные решения для сложных задач, сочетая техническую экспертизу и дизайн-мышление.
+            </p>
+            <a href="#projects" className="btn">
+                <i className="fas fa-arrow-down"></i> Посмотреть работы
+            </a>
+        </section>
     );
 }

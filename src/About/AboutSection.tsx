@@ -1,27 +1,44 @@
 ﻿import React from 'react';
-import './AboutSection.css';
-import ScrollAnimation from 'react-animate-on-scroll';
-import "animate.css/animate.compat.css";
-import profileImg from '../Assets/cat.png';
 
-export function AboutSection() {
+export function About() {
     return (
-        <ScrollAnimation animateIn="fadeIn" duration={0.5}>
-        <section className="about-section">
-
-            <h2>Обо мне</h2>
-            <div className="content">
-                <div className="profile-img">
-                    <img src={profileImg} alt="Профиль"/>
-                </div>
+        <section id="about" className="section">
+            <h2 className="section-title">Обо мне</h2>
+            <div className="about-content">
                 <div className="about-text">
-                    <p>Привет! Я [???]</p>
-                    <p>Занимаюсь разработкой чего-то там</p>
-                    <p>Специализируюсь на чем-то</p>
+                    <p>
+                        Я профессиональный кто-то там с крутыми навыками. Моя специализация - лежать на диване.
+                    </p>
+                    <p>
+                        Еще какая-то всем необходимая инфа!
+                    </p>
+                    <div className="skills">
+                        <div className="skill">
+                            <h4>Супер навык 1</h4>
+                            <p>что-то еще</p>
+                        </div>
+                        <div className="skill">
+                            <h4>Супер навык 2</h4>
+                            <p>что-то еще</p>
+                        </div>
+                        <div className="skill">
+                            <h4>Супер навык 3</h4>
+                            <p>что-то еще</p>
+                        </div>
+                        <div className="skill">
+                            <h4>Супер навык 4</h4>
+                            <p>что-то еще</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="about-img">
+                    <div className="about-img-content">
+                        <i className="fas fa-code text-5xl text-blue-500 mb-4"></i>
+                        <h3>Крутой чувак</h3>
+                        <p>что-то разрабатывает</p>
+                    </div>
                 </div>
             </div>
-
         </section>
-    </ScrollAnimation>
     );
 }
