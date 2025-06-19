@@ -1,11 +1,21 @@
 ﻿import React from 'react';
+import '../App.css';
+import reactIcon from '../Assets/logo.svg';
 
-// Компонент футера
 export function Footer() {
     return (
         <footer className="footer">
-            <p>© 2023 Профессиональное портфолио.</p>
-            <p>Создано с использованием React и современных веб-технологий.</p>
+            <div className="site">
+                <span>localhost:3000</span>
+            </div>
+            <div>
+                <p>
+                    Сайт сделан с помощью<img src={reactIcon} alt="React" />
+                </p>
+            </div>
+            <div className="social-media">
+                <span>Ссылки на соцсети</span>
+            </div>
         </footer>
     );
 }
