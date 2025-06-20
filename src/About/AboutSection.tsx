@@ -1,17 +1,38 @@
 ﻿import { motion } from "framer-motion";
+import catblow from "../Assets/catblow.gif"
 
 export function About() {
+    // Массив с навыками
+    const skills = [
+        {
+            title: "React & TypeScript",
+            description: "Создаю компоненты, которые иногда даже работают"
+        },
+        {
+            title: "Java",
+            description: "Пишу что-то похожее на код. Зато не на питоне!"
+        },
+        {
+            title: "Дизайнер GUI",
+                description: "Главное в GUI: перфектциониз м"
+        },
+        {
+            title: "Git",
+            description: "Умею жать на кнопку Commit and Push"
+        }
+    ];
+
     return (
         <motion.section id="about" className="section"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 1 }}
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        transition={{ duration: 1 }}
         >
             <motion.h2 className="section-title"
-                initial={{ x: -50, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.4, duration: 0.6 }}
+                       initial={{ x: -50, opacity: 0 }}
+                       whileInView={{ x: 0, opacity: 1 }}
+                       viewport={{ once: true }}
+                       transition={{ delay: 0.4, duration: 0.6 }}
             >
                 Обо мне
             </motion.h2>
@@ -24,19 +45,19 @@ export function About() {
                     viewport={{ once: true }}
                     transition={{ delay: 0.5, duration: 0.6 }}
                 >
-                    <p>Я профессиональный кто-то там с крутыми навыками. Моя специализация - лежать на диване.</p>
-                    <p>Еще какая-то всем необходимая инфа!</p>
+                    <p>Я "профессиональный" программист с супер крутыми навыками. Моя специализация - лежать на диване с ноутбуком.</p>
+                    <p>Вот мои супер профессиональные навыки:</p>
 
                     <div className="skills">
-                        {[1, 2, 3, 4].map((i) => (
+                        {skills.map((skill, i) => (
                             <motion.div key={i} className="skill"
-                                initial={{ x: -30, opacity: 0 }}
-                                whileInView={{ x: 0, opacity: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: 0.3 + i * 0.1, duration: 0.5 }}
+                                        initial={{ x: -30, opacity: 0 }}
+                                        whileInView={{ x: 0, opacity: 1 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: 0.3 + i * 0.1, duration: 0.5 }}
                             >
-                                <h4>Супер навык {i}</h4>
-                                <p>что-то еще</p>
+                                <h4>{skill.title}</h4>
+                                <p>{skill.description}</p>
                             </motion.div>
                         ))}
                     </div>
@@ -50,9 +71,14 @@ export function About() {
                     transition={{ delay: 0.4, duration: 0.6 }}
                 >
                     <div className="about-img-content">
-                        <i className="fas fa-code text-5xl text-blue-500 mb-4"></i>
-                        <h3>Крутой чувак</h3>
-                        <p>что-то разрабатывает</p>
+                        <img
+                            src={catblow}
+                            alt="Тут должна быть гифка крутая"
+                            style={{
+                                filter: "drop-shadow(0 0 0 transparent)", // убирает белую окантовку
+                                mixBlendMode: "multiply", // если фон светлый
+                            }}
+                        />
                     </div>
                 </motion.div>
             </div>

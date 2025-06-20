@@ -5,10 +5,10 @@ export function Home() {
         
         <section id="home" className="hero">
             <h1 className="hero-title">
-                Привет, я [???] профессиональный разработчик
+                Привет, я Федя
             </h1>
             <p className="hero-text">
-                Создаю современные решения для сложных задач, сочетая техническую экспертизу и дизайн-мышление.
+                Я студент-программист. На данный момент создаю учебные проекты, например этот сайт-портфолио
             </p>
             <a href="#projects" className="btn">
                 <i className="fas fa-arrow-down"></i> Мои проекты
