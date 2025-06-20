@@ -48,15 +48,30 @@ export function Contact() {
                             title: "Ссылки",
                             content: (
                                 <div className="social-links">
-                                    {["github", "vk", "telegram"].map((social) => (
+                                    {[
+                                        {
+                                            name: "github",
+                                            url: "https://github.com/"
+                                        },
+                                        {
+                                            name: "vk",
+                                            url: "https://vk.com/"
+                                        },
+                                        {
+                                            name: "telegram",
+                                            url: "https://t.me/"
+                                        }
+                                    ].map((social) => (
                                         <motion.a
-                                            key={social}
-                                            href="#"
+                                            key={social.name}
+                                            href={social.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
                                             className="social-link"
                                             whileHover={{ scale: 1.1 }}
                                             transition={{ duration: 0.2 }}
                                         >
-                                            <i className={`fab fa-${social}`}></i>
+                                            <i className={`fab fa-${social.name}`}></i>
                                         </motion.a>
                                     ))}
                                 </div>

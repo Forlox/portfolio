@@ -465,6 +465,14 @@ textarea.form-input {
   gap: 1rem;
 }
 
+.social-link {
+  text-decoration: none;
+  color: white;
+  font-size: 1.8rem;
+  background: none !important;
+  border: none;
+}
+
 @keyframes spinning {
   0% {transform: rotate(0);}
   100% {transform: rotate(360deg);}
