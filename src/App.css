@@ -318,6 +318,39 @@ body, html {
   color: #3a7cff;
 }
 
+/* Стили для кнопки "Показать ещё" */
+.show-more-btn {
+  display: block;
+  margin: 40px auto 0;
+  padding: 12px 30px;
+  background: rgba(77, 142, 255, 0.1);
+  color: #4d8eff;
+  border: 1px solid rgba(77, 142, 255, 0.3);
+  border-radius: 30px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  backdrop-filter: blur(5px);
+}
+
+.show-more-btn:hover {
+  background: rgba(77, 142, 255, 0.2);
+  color: #3a7cff;
+  border-color: rgba(77, 142, 255, 0.5);
+  box-shadow: 0 5px 15px rgba(77, 142, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.show-more-btn:active {
+  transform: translateY(0);
+}
+
+.project-img i.fab.fa-github {
+  font-size: 5rem;
+}
+
 /* Контакты */
 .contact-container {
   display: grid;
