@@ -1,4 +1,4 @@
-﻿import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 import catblow from "../Assets/catblow.gif"
 
 export function About() {

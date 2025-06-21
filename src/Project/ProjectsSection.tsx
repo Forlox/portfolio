@@ -1,4 +1,4 @@
-﻿import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 type GitHubRepo = {
@@ -54,7 +54,14 @@ export function Projects() {
             </motion.h2>
 
             {error && <p className="text-red-500">{error}</p>}
-            {loading && <p>Загрузка...</p>}
+            {loading && <motion.i
+                animate={{ rotate: 360 }}
+                transition={{
+                    repeat: Infinity,
+                    ease: "linear",
+                    duration: 1,
+                }}
+                className="fas fa-spinner"></motion.i>}
 
             <div className="projects-grid">
                 {repos.map((repo, index) => (
@@ -64,8 +71,8 @@ export function Projects() {
                         initial={{ y: 50, opacity: 0 }}
                         whileInView={{ y: 0, opacity: 1 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.2, delay: index * 0.1 }}
-                        whileHover={{ scale: 1.03 }}
+                        transition={{ duration: 0.1}}
+                        whileHover={{ scale: 1.01 }}
                     >
                         <div className="project-img">
                             <i className="fab fa-github text-4xl text-white"></i>

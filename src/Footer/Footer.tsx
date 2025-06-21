@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import '../App.css';
 import reactIcon from '../Assets/logo.svg';
 import { motion } from 'framer-motion';

@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 
 export function Header() {
     return (
@@ -8,7 +8,6 @@ export function Header() {
             </div>
             <div className="nav-links-container">
                 <div className="nav-links">
-                    <a href="#home" className="nav-link">Главная</a>
                     <a href="#about" className="nav-link">Обо мне</a>
                     <a href="#projects" className="nav-link">Проекты</a>
                     <a href="#contact" className="nav-link">Контакты</a>

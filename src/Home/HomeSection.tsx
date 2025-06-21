@@ -1,18 +1,34 @@
-﻿import React from 'react';
+import React from 'react';
+import { motion } from "framer-motion";
 
 export function Home() {
     return (
         
-        <section id="home" className="hero">
-            <h1 className="hero-title">
+        <motion.section id="home" className="hero" initial={{opacity: 0}} whileInView={{ opacity: 1 }} transition={{ duration: 1 }} viewport={{once: false}}>
+            <motion.h1
+                initial={{opacity:0}}
+                whileInView={{opacity:1}}
+                transition={{duration:1, delay:0.5}}
+                viewport={{once: true}}
+                className="hero-title">
                 Привет, я Федя
-            </h1>
-            <p className="hero-text">
+            </motion.h1>
+            <motion.p
+                initial={{y:30, opacity:0}}
+                whileInView={{y:0, opacity:1}}
+                transition={{duration:0.5, delay:1.3}}
+                viewport={{once:true}}
+                className="hero-text">
                 Я студент-программист. На данный момент создаю учебные проекты, например этот сайт-портфолио
-            </p>
-            <a href="#projects" className="btn">
-                <i className="fas fa-arrow-down"></i> Мои проекты
-            </a>
-        </section>
+            </motion.p>
+            <motion.a
+                initial={{opacity:0}}
+                whileInView={{opacity:1}}
+                transition={{duration:1, delay:2}}
+                viewport={{once:true}}
+                href="#about" className="btn">
+                <i className="fas fa-arrow-down"></i>
+            </motion.a>
+        </motion.section>
     );
 }
