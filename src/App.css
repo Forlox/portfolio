@@ -22,6 +22,36 @@ body, html {
   padding: 20px;
 }
 
+/* Секции */
+.section {
+  margin-bottom: 100px;
+  padding: 50px 40px;
+  background: rgba(15, 15, 25, 0.7);
+  backdrop-filter: blur(8px);
+  border-radius: 15px;
+  border: 1px solid rgba(100, 100, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.section-title {
+  font-size: 2.3rem;
+  margin-bottom: 40px;
+  color: #fff;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 4px;
+  background: #4d8eff;
+  border-radius: 2px;
+}
+
 /* Навигация */
 .nav {
   display: flex;
@@ -33,14 +63,13 @@ body, html {
 }
 
 #about {
-  scroll-margin-top: 10vh;
+  scroll-margin-top: 3rem;
 }
 #projects {
   scroll-margin-top: 1rem;
 }
-
 #contact {
-  scroll-margin-top: 10rem;
+  scroll-margin-top: 8rem;
 }
 
 .logo {
@@ -134,36 +163,6 @@ body, html {
   box-shadow: 0 8px 20px rgba(77, 142, 255, 0.4);
 }
 
-/* Секции */
-.section {
-  margin-bottom: 100px;
-  padding: 50px 40px;
-  background: rgba(15, 15, 25, 0.7);
-  backdrop-filter: blur(10px);
-  border-radius: 15px;
-  border: 1px solid rgba(100, 100, 255, 0.1);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-.section-title {
-  font-size: 2.3rem;
-  margin-bottom: 40px;
-  color: #fff;
-  position: relative;
-  padding-bottom: 15px;
-}
-
-.section-title::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 80px;
-  height: 4px;
-  background: #4d8eff;
-  border-radius: 2px;
-}
-
 /* Обо мне */
 .about-content {
   display: grid;
@@ -244,13 +243,13 @@ body, html {
 /* Проекты */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
 }
 
 .project-card {
   background: rgba(20, 20, 35, 0.7);
-  border-radius: 10px;
+  border-radius: 8px;
   overflow: hidden;
   border: 1px solid rgba(100, 100, 255, 0.1);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
@@ -261,12 +260,12 @@ body, html {
 }
 
 .project-card:hover {
-  box-shadow: 0 15px 30px rgba(77, 142, 255, 0.2);
+  box-shadow: 0 12px 25px rgba(77, 142, 255, 0.2);
   border-color: rgba(77, 142, 255, 0.3);
 }
 
 .project-img {
-  height: 200px;
+  height: 160px;
   width: 100%;
   background: linear-gradient(45deg, #0a0a14, #1a1a2a);
   position: relative;
@@ -278,39 +277,38 @@ body, html {
 }
 
 .project-info {
-  padding: 25px;
+  padding: 20px;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
 }
 
 .project-title {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
+  font-size: 1.3rem;
+  margin-bottom: 12px;
   color: #fff;
 }
 
 .project-description {
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: #a0a0b0;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   flex-grow: 1;
-  line-height: 1.6;
 }
 
 .project-tech {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 20px;
+  gap: 8px;
+  margin-bottom: 10px;
 }
 
 .tech-tag {
   background: rgba(77, 142, 255, 0.1);
   color: #4d8eff;
-  padding: 6px 15px;
+  padding: 5px 12px;
   border-radius: 30px;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
 }
 
 .project-link {
@@ -320,7 +318,7 @@ body, html {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 8px;
+  gap: 6px;
   font-weight: 500;
   transition: all 0.3s ease;
 }
