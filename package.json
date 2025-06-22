@@ -24,7 +24,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -52,9 +54,5 @@
     "react-router-dom": "^7.6.2",
     "react-router-hash-link": "^2.4.3"
   },
-  "homepage": "https://Forlox.github.io/portfolio",
-  "scripts": {
-    "predeploy": "yarn build",
-    "deploy": "gh-pages -d build"
-  }
+  "homepage": "https://Forlox.github.io/portfolio"
 }
