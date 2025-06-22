@@ -48,7 +48,13 @@
     "@types/react-animate-on-scroll": "^2.1.8",
     "@types/react-router-hash-link": "^2.4.9",
     "framer-motion": "^12.18.1",
+    "gh-pages": "^6.3.0",
     "react-router-dom": "^7.6.2",
     "react-router-hash-link": "^2.4.3"
+  },
+  "homepage": "https://Forlox.github.io/portfolio",
+  "scripts": {
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
   }
 }
