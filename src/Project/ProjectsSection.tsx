@@ -13,8 +13,19 @@ export function Projects() {
     const [repos, setRepos] = useState<GitHubRepo[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
-    const [repoCount, setRepoCount] = useState(3);
+    const [repoCount, setRepoCount] = useState(6);
 
+    useEffect(() => {
+        const handleResize = () => {
+            setRepoCount(window.innerWidth <= 768 ? 3 : 6);
+        };
+
+        handleResize();
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
+    // Загрузка репозиториев
     useEffect(() => {
         const fetchRepos = async () => {
             try {
@@ -53,26 +64,32 @@ export function Projects() {
                 Мои Git-репозитории
             </motion.h2>
 
-            {error && <p className="text-red-500">{error}</p>}
-            {loading && <motion.i
-                animate={{ rotate: 360 }}
-                transition={{
-                    repeat: Infinity,
-                    ease: "linear",
-                    duration: 1,
-                }}
-                className="fas fa-spinner"></motion.i>}
+            {loading && (
+                <motion.div
+                    className="flex justify-center py-8"
+                    animate={{ rotate: 360 }}
+                    transition={{
+                        repeat: Infinity,
+                        ease: "linear",
+                        duration: 1,
+                    }}
+                >
+                    <i className="fas fa-spinner text-4xl text-blue-500"></i>
+                </motion.div>
+            )}
+
+            {error && <p className="text-red-500 text-center">{error}</p>}
 
             <div className="projects-grid">
                 {repos.map((repo, index) => (
                     <motion.div
-                        key={index}
+                        key={repo.name}
                         className="project-card"
                         initial={{ y: 50, opacity: 0 }}
                         whileInView={{ y: 0, opacity: 1 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.1}}
-                        whileHover={{ scale: 1.01 }}
+                        transition={{ duration: 0.5, delay: index * 0.1 }}
+                        whileHover={{ scale: 1.02 }}
                     >
                         <div className="project-img">
                             <i className="fab fa-github text-4xl text-white"></i>
@@ -85,10 +102,10 @@ export function Projects() {
                                 </p>
                             )}
                             <div className="project-tech">
-                                {repo.topics?.slice(0, 3).map((topic, i) => (
-                                    <span key={i} className="tech-tag">
-                                        {topic}
-                                    </span>
+                                {repo.topics?.slice(0, 3).map((topic) => (
+                                    <span key={topic} className="tech-tag">
+                    {topic}
+                  </span>
                                 ))}
                             </div>
                             <a
@@ -97,7 +114,7 @@ export function Projects() {
                                 rel="noopener noreferrer"
                                 className="project-link"
                             >
-                                Открыть на GitHub <i className="fas fa-arrow-right"></i>
+                                Открыть на GitHub <i className="fas fa-arrow-right ml-1"></i>
                             </a>
                         </div>
                     </motion.div>
@@ -105,13 +122,15 @@ export function Projects() {
             </div>
 
             {repos.length >= repoCount && (
-                <button
-                    onClick={() => setRepoCount(repoCount + 4)}
+                <motion.button
+                    onClick={() => setRepoCount(prev => prev + (window.innerWidth <= 768 ? 3 : 6))}
                     className="show-more-btn"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
                 >
                     Показать ещё
                     <i className="fas fa-chevron-down ml-2"></i>
-                </button>
+                </motion.button>
             )}
         </motion.section>
     );

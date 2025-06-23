@@ -519,3 +519,42 @@ textarea.form-input {
   0% {transform: rotate(0);}
   100% {transform: rotate(360deg);}
 }
+
+@media (max-width: 768px) {
+  .section {
+    padding: 15px 15px;
+  }
+  .nav{
+    justify-content: flex-end;
+    margin-bottom: 0;
+  }
+  .nav .logo{
+    display: none;
+  }
+  .nav-link {
+    padding: 0;
+  }
+  .about-img-content{
+    display: none;
+  }
+  .about-img {
+    display: none;
+  }
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+  .skill p{
+    margin-bottom: 0.5rem;
+  }
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+  .footer .site,
+  .footer .social-media {
+    display: none;
+  }
+  .footer{
+    justify-content: center;
+    padding: 0;
+  }
+}
