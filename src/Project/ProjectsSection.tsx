@@ -13,7 +13,7 @@ export function Projects() {
     const [repos, setRepos] = useState<GitHubRepo[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
-    const [repoCount, setRepoCount] = useState(6);
+    const [repoCount, setRepoCount] = useState(3);
 
     useEffect(() => {
         const fetchRepos = async () => {
