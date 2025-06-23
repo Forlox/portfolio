@@ -1,4 +1,4 @@
-﻿document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () {
     const canvas = document.createElement('canvas');
     canvas.id = 'star-canvas';
     canvas.style.position = 'fixed';
@@ -11,6 +11,17 @@
 
     const ctx = canvas.getContext('2d');
 
+    // Определяем мобильное устройство
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+
+    // Настройки в зависимости от устройства
+    const config = {
+        starCount: isMobile ? 150 : 300,
+        maxDist: isMobile ? 100 : 150,
+        starSize: isMobile ? 1.5 : 2,
+        mouseRadius: isMobile ? 80 : 120
+    };
+
     function setCanvasSize() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
@@ -20,8 +31,6 @@
     window.addEventListener('resize', setCanvasSize);
 
     // Параметры звезд
-    const numStars = 300;
-    const maxDist = 150;
     const stars = [];
     const colors = ['#ffffff', '#4d8eff', '#6a93ff', '#8daaff'];
 
@@ -29,7 +38,7 @@
     const mouse = {
         x: null,
         y: null,
-        radius: 120
+        radius: config.mouseRadius
     };
 
     class Star {
@@ -38,7 +47,7 @@
             this.y = Math.random() * canvas.height;
             this.vx = (Math.random() - 0.5) * 0.5;
             this.vy = (Math.random() - 0.5) * 0.5;
-            this.size = Math.random() * 2 + 0.5;
+            this.size = Math.random() * config.starSize + 0.5;
             this.color = colors[Math.floor(Math.random() * colors.length)];
             this.opacity = Math.random() * 0.7 + 0.3;
             this.twinkleSpeed = Math.random() * 0.03 + 0.01;
@@ -77,8 +86,8 @@
                 if (distance < mouse.radius) {
                     const force = (mouse.radius - distance) / mouse.radius;
                     const angle = Math.atan2(dy, dx);
-                    this.x -= Math.cos(angle) * force * 3;
-                    this.y -= Math.sin(angle) * force * 3;
+                    this.x -= Math.cos(angle) * force * (isMobile ? 2 : 3);
+                    this.y -= Math.sin(angle) * force * (isMobile ? 2 : 3);
                 }
             }
         }
@@ -91,7 +100,7 @@
         }
     }
 
-    // Соединение звезд тонкими линиями
+    // Соединение звезд
     function connectStars() {
         for (let i = 0; i < stars.length; i++) {
             for (let j = i + 1; j < stars.length; j++) {
@@ -99,13 +108,13 @@
                 const dy = stars[i].y - stars[j].y;
                 const distance = Math.sqrt(dx * dx + dy * dy);
 
-                if (distance < maxDist) {
-                    const opacity = 1 - distance / maxDist;
+                if (distance < config.maxDist) {
+                    const opacity = 1 - distance / config.maxDist;
                     ctx.beginPath();
                     ctx.moveTo(stars[i].x, stars[i].y);
                     ctx.lineTo(stars[j].x, stars[j].y);
                     ctx.strokeStyle = `rgba(255, 255, 255, ${opacity * 0.3})`;
-                    ctx.lineWidth = opacity * 0.4;
+                    ctx.lineWidth = opacity * (isMobile ? 0.3 : 0.4); // Тоньше линии
                     ctx.stroke();
                 }
             }
@@ -114,7 +123,6 @@
 
     function animate() {
         requestAnimationFrame(animate);
-        // Очищаем canvas и рисуем тёмный фон
         ctx.fillStyle = '#0a0a14';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -127,7 +135,7 @@
     }
 
     function init() {
-        for (let i = 0; i < numStars; i++) {
+        for (let i = 0; i < config.starCount; i++) {
             stars.push(new Star());
         }
         animate();
